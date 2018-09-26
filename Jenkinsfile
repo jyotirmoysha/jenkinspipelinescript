@@ -1,34 +1,49 @@
 pipeline {
     agent any
+	
+	
 
     stages {
-        stage ('Compile Stage') {
+        stage ('Git Checkout') {
 
             steps {
-				 withMaven(maven : '') {
-                     sh 'mvn clean install'
-					 }
-                
-            }
-        }
+               git credentialsId: '15df31c2-35d4-4cbe-af56-6ffdaf4170af', url: 'https://github.com/jyotirmoysha/jenkinspipelinescript.git'
 
-        stage ('Testing Stage') {
-
-            steps {
-					withMaven(maven : '') {
-                    sh 'mvn test'
                 }
             }
+			
+			stage ('Maven Build') {
+
+            steps {
+					withMaven {
+					            //for Linux
+					            //sh 'mvn clean install'
+					            //for windows
+								bat 'mvn clean install'
+                                echo 'War created successfully'
+							}																				
+												
+            
+			}
+            }
+			
+			stage ('Maven Test run') {
+
+            steps {
+					withMaven {
+					            //for Linux
+					            //sh 'mvn test'
+					            //for windows
+								bat 'mvn test'
+                                echo 'Test executed successfully'
+							}																				
+					
+				}
+            }
+			
+			
+			
         }
 
-
-        stage ('Deployment Stage') {
-            steps {
-                withMaven(maven : '') {
-                    sh 'mvn deploy'
-					}
-                }
-            }
-        
-		}
- }
+       
+    }
