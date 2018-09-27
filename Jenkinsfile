@@ -1,6 +1,10 @@
 pipeline {
     agent any
 	
+	environment {
+        ENV_NAME = "${env.ENVIRONMENT_NAME}"
+        MY_NAME = "${env.NAME}"
+    }
 	
 
     stages {
@@ -37,6 +41,23 @@ pipeline {
 								bat 'mvn test'
                                 echo 'Test executed successfully'
 							}																				
+					
+				}
+            }
+            
+            stage ('Move artefacts SSH') {
+
+            steps {
+                    echo 'Building Branch: ' + env.ENV_NAME
+                    echo 'Building Branch: ' + env.MY_NAME
+																									
+					//bat move /-y "D:\example\original\*2007*.txt" "D:\example\New folder\"
+					//bat move /y "C:/Users/js0e1608/.jenkins/workspace/my-first-jenkins-script" "E:/JenkinsProjLocationMaven/"
+					// if (env.ENV_NAME == 'development') {
+                        echo 'Building Container for development Branch: ' + env.ENV_NAME
+                    //} else if (env.ENV_NAME == 'uat') {
+                        echo 'Building Container for UAT Branch: ' + env.ENV_NAME
+                    //}
 					
 				}
             }
