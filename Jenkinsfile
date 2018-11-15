@@ -68,7 +68,7 @@ pipeline {
 			 steps {
 				 script {
 					 step ([$class: 'CopyArtifact',
-					 projectName: 'Create_archive',
+					 projectName: 'cvs-jenkins-pipeline-test',
 					 filter: "C:/JYO/Rough/loc1/demo/test.*",
 					 target: 'C:/JYO/Rough/loc2']);
 				 }
