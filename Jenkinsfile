@@ -23,7 +23,8 @@ pipeline {
 					            //for Linux
 					            //sh 'mvn clean install'
 					            //for windows
-								bat 'mvn clean install'
+							//	bat 'mvn clean install'
+								bat 'mvn clean package'
                                 echo 'War created successfully'
 							}																				
 												
@@ -69,7 +70,7 @@ pipeline {
 				 script {
 					 step ([$class: 'CopyArtifact',
 					 projectName: 'cvs-jenkins-pipeline-test',
-					 filter: "*.*",
+					 filter: "packages/*.*",
 					 target: 'C:/JYO/Rough/loc2']);
 				 }
 			 }
