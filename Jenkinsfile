@@ -59,7 +59,7 @@ pipeline {
                         echo 'Building Container for UAT Branch: ' + env.ENV_NAME
                     //}
 
-			bat move /-y "C:/JYO/Rough/loc1" "C:/JYO/Rough/loc2"
+			//bat move /-y "C:/JYO/Rough/loc1" "C:/JYO/Rough/loc2"
 					
 				}
             }
