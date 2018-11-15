@@ -70,7 +70,7 @@ pipeline {
 				 script {
 					 step ([$class: 'CopyArtifact',
 					 projectName: 'cvs-jenkins-pipeline-test',
-					 filter: "packages/*.*",
+					 filter: "target/*.*",
 					 target: 'C:/JYO/Rough/loc2']);
 				 }
 			 }
