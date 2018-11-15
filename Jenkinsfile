@@ -64,9 +64,19 @@ pipeline {
 				}
             }
 			
-			
-			
-        }
+			stage('Copy Archive') {
+			 steps {
+				 script {
+					 step ([$class: 'CopyArtifact',
+					 projectName: 'Create_archive',
+					 filter: "C:/JYO/Rough/loc1/demo/test.*",
+					 target: 'C:/JYO/Rough/loc2']);
+				 }
+			 }
+				
+				
+				
+			}
 
        
     }
