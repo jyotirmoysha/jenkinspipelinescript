@@ -73,6 +73,7 @@ pipeline {
 					// filter: 'target/*.jar',
 					// target: 'C:/JYO/Rough/loc2']);
 				 //}
+				  echo 'Building Container for UAT Branch: ' + env.ENV_NAME
 			 }
 				
 				
