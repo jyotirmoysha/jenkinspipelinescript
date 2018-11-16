@@ -67,12 +67,12 @@ pipeline {
 			
 			stage('Copy Archive') {
 			 steps {
-				 script {
-					 step ([$class: 'CopyArtifact',
-					 projectName: 'cvs-jenkins-pipeline-test',
-					 filter: 'target/*.jar',
-					 target: 'C:/JYO/Rough/loc2']);
-				 }
+				 //script {
+					// step ([$class: 'CopyArtifact',
+					// projectName: 'cvs-jenkins-pipeline-test',
+					// filter: 'target/*.jar',
+					// target: 'C:/JYO/Rough/loc2']);
+				 //}
 			 }
 				
 				
