@@ -21,9 +21,9 @@ pipeline {
             steps {
 					withMaven {
 					            //for Linux
-					            //sh 'mvn clean install'
+					            sh 'mvn clean install'
 					            //for windows
-								bat 'mvn clean install'
+							//	bat 'mvn clean install'
 							//	bat 'mvn clean package'
                                 echo 'War created successfully'
 							}																				
