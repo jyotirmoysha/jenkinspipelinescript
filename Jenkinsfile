@@ -39,9 +39,9 @@ pipeline {
             steps {
 					withMaven {
 					            //for Linux
-					            //sh 'mvn test'
+					            sh 'mvn test'
 					            //for windows
-								bat 'mvn test'
+							//	bat 'mvn test'
                                 echo 'Test executed successfully'
 							}																				
 					
