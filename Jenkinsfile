@@ -1,6 +1,6 @@
 pipeline {
-   // agent any
-	agent { docker { image 'maven:3.3.3' } }
+   agent any
+	//agent { docker { image 'maven:3.3.3' } }
 	environment {
         ENV_NAME = "${env.ENVIRONMENT_NAME}"
         MY_NAME = "${env.NAME}"
